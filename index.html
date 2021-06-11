@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Calculator</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="scrypt.js" type="text/javascript" ></script>
+</head>
+
+<body>
+<div class="box">
+	<div class="head">
+		<div style="text-align: center; font-size: 20px; text-decoration: underline;">Result</div>
+		<div class="hdiv2">L-1 Supplier :<input type="text"  class="inp2" name="" id="l_1"></div>
+		<div class="hdiv2">1 Year Cost:<input type="text"  class="inp2" name="" id="one_yr" onfocus='cal_min();'></div>
+		<div class="hdiv2">3 Year Cost:<input type="text"  class="inp2" name="" id="three_yr"></div>
+		<div class="hdiv2">Tender Mode:<input type="text"  class="inp2" name="" id="tender"></div>
+		<div class="hdiv2">AOC/ IFA:<input type="text"  class="inp2" name="" id="aoc_ifa"></div>
+	</div>
+	<div class="head2">
+		<div class="hdiv">Proto Qty :<input type="text"  class="inp" name="" id="p_qty"></div>
+		<div class="hdiv">IOQ (1 Yr):<input type="text"  class="inp" name="" id="io_qty"></div>
+		<div class="hdiv">Future Qty (3 Yrs):<input type="text"  class="inp" name="" id="f_qty"></div>
+	</div>
+	
+	<div class="div_left">
+		<div class="v1">Supplier One :<input type="text"  class="inp" name="" id="s_01"></div>
+		<div class="v1">Prototype(s)</div>
+		<div class="v2">Dev Cost :</div><div class="v3"><input type="text"  class="inp3" name="" id="dev_01"></div>
+		<div class="v2">Cost/ Item :</div><div class="v3"><input type="text"  class="inp3" name="" id="pcost_01"></div>
+		<div class="v2">Total Proto Cost :</div><div class="v3"><input type="text"  class="inp3" name="" id="tot_01" onfocus='cal_s1();'></div>
+		<div class="v1">Future Cost Breakdown</div>
+		<div class="v4">From</div>
+		<div class="v4">To</div>
+		<div class="v4">Price</div>
+		<div class="v4"><input type="text"  class="inp4" name="" id="f_s1_01"></div>
+		<div class="v4"><input type="text"  class="inp4" name="" id="t_s1_01"></div>
+		<div class="v4"><input type="text"  class="inp4" name="" id="p_s1_01"></div>
+		<div class="v4"><input type="text"  class="inp4" name="" id="f_s1_02"></div>
+		<div class="v4"><input type="text"  class="inp4" name="" id="t_s1_02"></div>
+		<div class="v4"><input type="text"  class="inp4" name="" id="p_s1_02"></div>
+		<div class="v4"><input type="text"  class="inp4" name="" id="f_s1_03"></div>
+		<div class="v4"><input type="text"  class="inp4" name="" id="t_s1_03"></div>
+		<div class="v4"><input type="text"  class="inp4" name="" id="p_s1_03"></div>
+		<div class="v4"><input type="text"  class="inp4" name="" id="f_s1_04"></div>
+		<div class="v4"><input type="text"  class="inp4" name="" id="t_s1_04"></div>
+		<div class="v4"><input type="text"  class="inp4" name="" id="p_s1_04"></div>
+		<div class="v4"><input type="text"  class="inp4" name="" id="f_s1_05"></div>
+		<div class="v4"><input type="text"  class="inp4" name="" id="t_s1_05"></div>
+		<div class="v4"><input type="text"  class="inp4" name="" id="p_s1_05"></div>
+		<div class="v1">IOQ (1Yr)</div>
+		<div class="v2">Future Cost :</div><div class="v3"><input type="text"  class="inp3" name="" id="fc_1yr_01" onfocus='cal_s1();'></div>
+		<div class="v2">Tax @ 18% :</div><div class="v3"><input type="text" class="inp3" name="" id="tax_01"></div>
+		<div class="v2">Grand Total :</div><div class="v3"><input type="text"  class="inp3" name="" id="gt_01"></div>
+	</div>
+
+	<div class="div_left">
+		<div class="v1">Supplier Two :<input type="text"  class="inp" name="" id="s_02"></div>
+		<div class="v1">Prototype(s)</div>
+		<div class="v2">Dev Cost :</div><div class="v3"><input type="text"  class="inp3" name="" id="dev_02"></div>
+		<div class="v2">Cost/ Item :</div><div class="v3"><input type="text"  class="inp3" name="" id="pcost_02"></div>
+		<div class="v2">Total Proto Cost :</div><div class="v3"><input type="text"  class="inp3" name="" id="tot_02" onfocus='cal_s2();'></div>
+		<div class="v1">Future Cost Breakdown</div>
+		<div class="v4">From</div>
+		<div class="v4">To</div>
+		<div class="v4">Price</div>
+		<div class="v4"><input type="text"  class="inp4" name="" id="f_s2_01"></div>
+		<div class="v4"><input type="text"  class="inp4" name="" id="t_s2_01"></div>
+		<div class="v4"><input type="text"  class="inp4" name="" id="p_s2_01"></div>
+		<div class="v4"><input type="text"  class="inp4" name="" id="f_s2_02"></div>
+		<div class="v4"><input type="text"  class="inp4" name="" id="t_s2_02"></div>
+		<div class="v4"><input type="text"  class="inp4" name="" id="p_s2_02"></div>
+		<div class="v4"><input type="text"  class="inp4" name="" id="f_s2_03"></div>
+		<div class="v4"><input type="text"  class="inp4" name="" id="t_s2_03"></div>
+		<div class="v4"><input type="text"  class="inp4" name="" id="p_s2_03"></div>
+		<div class="v4"><input type="text"  class="inp4" name="" id="f_s2_04"></div>
+		<div class="v4"><input type="text"  class="inp4" name="" id="t_s2_04"></div>
+		<div class="v4"><input type="text"  class="inp4" name="" id="p_s2_04"></div>
+		<div class="v4"><input type="text"  class="inp4" name="" id="f_s2_05"></div>
+		<div class="v4"><input type="text"  class="inp4" name="" id="t_s2_05"></div>
+		<div class="v4"><input type="text"  class="inp4" name="" id="p_s2_05"></div>
+		<div class="v1">IOQ (1Yr)</div>
+		<div class="v2">Future Cost :</div><div class="v3"><input type="text"  class="inp3" name="" id="fc_1yr_02" onfocus='cal_s2();'></div>
+		<div class="v2">Tax @ 18% :</div><div class="v3"><input type="text"  class="inp3" name="" id="tax_02"></div>
+		<div class="v2">Grand Total :</div><div class="v3"><input type="text"  class="inp3" name="" id="gt_02"></div>
+	</div>
+
+	<div class="div_left">
+		<div class="v1">Supplier Three :<input type="text"  class="inp" name="" id="s_03"></div>
+		<div class="v1">Prototype(s)</div>
+		<div class="v2">Dev Cost :</div><div class="v3"><input type="text"  class="inp3" name="" id="dev_03"></div>
+		<div class="v2">Cost/ Item :</div><div class="v3"><input type="text"  class="inp3" name="" id="pcost_03"></div>
+		<div class="v2">Total Proto Cost :</div><div class="v3"><input type="text"  class="inp3" name="" id="tot_03" onfocus='cal_s3();'></div>
+		<div class="v1">Future Cost Breakdown</div>
+		<div class="v4">From</div>
+		<div class="v4">To</div>
+		<div class="v4">Price</div>
+		<div class="v4"><input type="text"  class="inp4" name="" id="f_s3_01"></div>
+		<div class="v4"><input type="text"  class="inp4" name="" id="t_s3_01"></div>
+		<div class="v4"><input type="text"  class="inp4" name="" id="p_s3_01"></div>
+		<div class="v4"><input type="text"  class="inp4" name="" id="f_s3_02"></div>
+		<div class="v4"><input type="text"  class="inp4" name="" id="t_s3_02"></div>
+		<div class="v4"><input type="text"  class="inp4" name="" id="p_s3_02"></div>
+		<div class="v4"><input type="text"  class="inp4" name="" id="f_s3_03"></div>
+		<div class="v4"><input type="text"  class="inp4" name="" id="t_s3_03"></div>
+		<div class="v4"><input type="text"  class="inp4" name="" id="p_s3_03"></div>
+		<div class="v4"><input type="text"  class="inp4" name="" id="f_s3_04"></div>
+		<div class="v4"><input type="text"  class="inp4" name="" id="t_s3_04"></div>
+		<div class="v4"><input type="text"  class="inp4" name="" id="p_s3_04"></div>
+		<div class="v4"><input type="text"  class="inp4" name="" id="f_s3_05"></div>
+		<div class="v4"><input type="text"  class="inp4" name="" id="t_s3_05"></div>
+		<div class="v4"><input type="text"  class="inp4" name="" id="p_s3_05"></div>
+		<div class="v1">IOQ (1Yr)</div>
+		<div class="v2">Future Cost :</div><div class="v3"><input type="text"  class="inp3" name="" id="fc_1yr_03" onfocus='cal_s3();'></div>
+		<div class="v2">Tax @ 18% :</div><div class="v3"><input type="text"  class="inp3" name="" id="tax_03"></div>
+		<div class="v2">Grand Total :</div><div class="v3"><input type="text"  class="inp3" name="" id="gt_03"></div>
+	</div>
+
+	<div class="div_left">
+		<div class="v1">Supplier Four :<input type="text"  class="inp" name="" id="s_04"></div>
+		<div class="v1">Prototype(s)</div>
+		<div class="v2">Dev Cost :</div><div class="v3"><input type="text"  class="inp3" name="" id="dev_04"></div>
+		<div class="v2">Cost/ Item :</div><div class="v3"><input type="text"  class="inp3" name="" id="pcost_04"></div>
+		<div class="v2">Total Proto Cost :</div><div class="v3"><input type="text"  class="inp3" name="" id="tot_04" onfocus='cal_s4();'></div>
+		<div class="v1">Future Cost Breakdown</div>
+		<div class="v4">From</div>
+		<div class="v4">To</div>
+		<div class="v4">Price</div>
+		<div class="v4"><input type="text"  class="inp4" name="" id="f_s4_01"></div>
+		<div class="v4"><input type="text"  class="inp4" name="" id="t_s4_01"></div>
+		<div class="v4"><input type="text"  class="inp4" name="" id="p_s4_01"></div>
+		<div class="v4"><input type="text"  class="inp4" name="" id="f_s4_02"></div>
+		<div class="v4"><input type="text"  class="inp4" name="" id="t_s4_02"></div>
+		<div class="v4"><input type="text"  class="inp4" name="" id="p_s4_02"></div>
+		<div class="v4"><input type="text"  class="inp4" name="" id="f_s4_03"></div>
+		<div class="v4"><input type="text"  class="inp4" name="" id="t_s4_03"></div>
+		<div class="v4"><input type="text"  class="inp4" name="" id="p_s4_03"></div>
+		<div class="v4"><input type="text"  class="inp4" name="" id="f_s4_04"></div>
+		<div class="v4"><input type="text"  class="inp4" name="" id="t_s4_04"></div>
+		<div class="v4"><input type="text"  class="inp4" name="" id="p_s4_04"></div>
+		<div class="v4"><input type="text"  class="inp4" name="" id="f_s4_05"></div>
+		<div class="v4"><input type="text"  class="inp4" name="" id="t_s4_05"></div>
+		<div class="v4"><input type="text"  class="inp4" name="" id="p_s4_05"></div>
+		<div class="v1">IOQ (1Yr)</div>
+		<div class="v2">Future Cost :</div><div class="v3"><input type="text"  class="inp3" name="" id="fc_1yr_04" onfocus='cal_s4();'></div>
+		<div class="v2">Tax @ 18% :</div><div class="v3"><input type="text"  class="inp3" name="" id="tax_04"></div>
+		<div class="v2">Grand Total :</div><div class="v3"><input type="text"  class="inp3" name="" id="gt_04"></div>
+	</div>
+
+
+
+
+</div>
+</body>
+</html>
